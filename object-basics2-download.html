@@ -28,7 +28,23 @@
     let bandInfo;
 
     // Add your code here
+    let band = {
+        name: 'Led Zeppelin',
+        nationality: 'British',
+        genre: 'rock',
+        members: 4,
+        formed: 1968,
+        split: 1980,
+        albums: [
+            {name: 'Led Zeppelin',released: '1969'},
+            {name: 'Led Zeppelin II', released: '1969'},
+            {name: ' In Through the Out Door', released: '1979'}
+        ],
 
+    };
+     bandInfo = 'The band ' + band.name + ' were an ' + band.nationality + ' ' + band.genre + ' band formed in London in ' +
+        band.formed + '.' + ' They achieved significant commercial success with eight studio albums released over ten years, from ' + 
+        band.albums[0].name + ' (' + band.albums[0].released + ') to ' + band.albums[2].name +  ' (' + band.albums[2].released + ').';
 
     // Don't edit the code below here!
 
