@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>JSON: Task 1</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <section class="preview">
+
+
+
+    </section>
+
+  </body>
+  <script>
+    let motherInfo = 'The mother cats are called ';
+    let kittenInfo;
+
+    fetch('sample.json')
+    .then(response => response.text())
+    .then(text => displayCatInfo(text))
+
+    function displayCatInfo(catString) {
+      let total = 0;
+      let male = 0;
+
+      // Add your code here
+      //converting the string into object
+      const catObj = JSON.parse(catString);
+    
+      for (let i =0; i < catObj.length; i++) {
+          const catName = catObj[i].name;
+          if ( i < catObj.length -2) {  
+            motherInfo = motherInfo + catName + ',';
+          } else {
+              if (i < catObj.length -1) {
+                motherInfo = motherInfo + catName + ' and ';
+              } else { motherInfo = motherInfo + catName + '.'}
+          }
+          
+        
+          
+          const catKitten = catObj.kittens;
+          for (j=0; j < catKitten.length; j++) {
+              if (catKitten[j].gender === 'm') {
+                  male = male +1;
+                  total = total +1;
+              } else {
+                  total = total +1;
+              }
+            kittenInfo = 'There are ' + total + 'kittens, from which ' + male + ' are male kittens and' + (total - male) +' female kitten';
+          }
+      }
+
+    // Don't edit the code below here!
+
+      para1.textContent = motherInfo;
+      para2.textContent = kittenInfo;
+    }
+
+    const section = document.querySelector('section');
+
+    let para1 = document.createElement('p');
+    let para2 = document.createElement('p');
+    section.appendChild(para1);
+    section.appendChild(para2);
+  </script>
+
+</html>
