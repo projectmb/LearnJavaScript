@@ -50,17 +50,16 @@
               } else { motherInfo = motherInfo + catName + '.'}
           }
           
-        
-          
-          const catKitten = catObj.kittens;
-          for (j=0; j < catKitten.length; j++) {
+               
+          const catKitten = catObj[i].kittens;
+          for (j = 0; j < catKitten.length; j++) {
               if (catKitten[j].gender === 'm') {
                   male = male +1;
                   total = total +1;
               } else {
                   total = total +1;
               }
-            kittenInfo = 'There are ' + total + 'kittens, from which ' + male + ' are male kittens and' + (total - male) +' female kitten';
+            kittenInfo = 'There are ' + total + ' kittens, from which ' + male + ' are male kittens and ' + (total - male) +' female kitten';
           }
       }
 
